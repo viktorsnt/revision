@@ -1,0 +1,7 @@
+<h1><%= @screen.title %></h1>
+<br>
+<%= @screen.recent_photo.name %>
+<br>
+<%= image_tag @screen.recent_photo.image.url, width: 500 %>
+<br>
+<%= link_to 'Back', project_path(@screen.project_id) %>

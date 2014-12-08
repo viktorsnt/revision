@@ -1,0 +1,29 @@
+<div class="sign-up">
+
+  <h2>Invite - Create user</h2>
+
+  <%= form_for @user, url: invite_new_user_path do |form| %>
+		<% if @token != nil %>
+		  <%= hidden_field_tag :invite_token, @token %>
+		<% end %>
+		
+		<div class="text-field">
+		  <%= form.label :email %>
+		  <%= form.text_field :email, :type => 'email' %>
+		</div>
+
+		<div class="password-field">
+		  <%= form.label :password %>
+		  <%= form.password_field :password %>
+		</div>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t('.sign_in'), sign_in_path %>
+    </div>
+  <% end %>
+
+</div>

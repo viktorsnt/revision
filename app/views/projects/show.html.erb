@@ -1,0 +1,33 @@
+<div class="wrap">
+	<h2><%= @project.title %></h2>
+	<ul>
+		<% @project.collaborators.each do |collaborator| %>
+			<li><%= collaborator.email %></li>
+		<% end %>
+	</ul>
+	<%= form_for @invite , :url => invites_path do |f| %>
+			<%= f.hidden_field :project_id, value: @project.id %>
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+			<%= f.submit 'Send' %>
+	<% end %>
+
+	<br>
+	<%= link_to 'Edit', edit_project_path(@project) %> |
+	<%= link_to 'Back', projects_path %>
+	<br>
+
+</div>
+
+<div class="wrap">
+	<h3>Screens</h3>
+	<hr>
+	<%- if @project.screens.any? %>
+		<%- @project.screens.each do |screen| %>
+			<div style="width:20%;display:block;">
+				<%= link_to image_tag(screen.photos.last.image.url, width: 300), project_screen_path(@project.id, screen.id) %>
+				<%= screen.title %>
+			</div>
+		<% end %>
+	<% end %>
+</div>

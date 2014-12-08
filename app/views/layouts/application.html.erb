@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Revision</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  
+  <nav id="navbar" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#/" class="logo">SimpleRevision</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="projects-menu-container">
+          <a href="/projects" ng-click=" closeProjectsMenu() " ng-class="{ active: (subview == 'projects') }">Projects</a>
+        </li>
+      </ul>
+      <ul class="user-panel nav navbar-nav navbar-right" id="">
+        <% if signed_in? -%>
+          <li class="logout">
+            <%= link_to t('.sign_out'), sign_out_path, :method => :delete %>
+          </li>
+        <% else -%>
+          <li class="login">
+            <%= link_to t('.sign_in'), sign_in_path %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+
+  <%= yield %>
+</body>
+</html>

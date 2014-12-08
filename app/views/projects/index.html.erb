@@ -1,0 +1,31 @@
+<div class="wrap projects-header">
+  <div class="inner">
+    <h2 class="title">Projects</h2>
+    <%= link_to 'New Project', new_project_path, class: 'btn btn-success btn-md' %>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="inner">
+    <div class="projects-list">
+      <% @projects.each do |project| %>
+        <div class="project-tile">
+          <div class="image">
+            <% if project.screens.any? -%>
+              <%= link_to image_tag(project.screens.first.recent_photo.image.url, class: 'img-responsive'), project %>
+            <% else -%>
+              <%= link_to image_tag('https://projects.invisionapp.com/assets/apps/d/img/add-screens-thumbnail.png?home=1', class: 'img-responsive'), project %>
+            <% end -%>
+          </div>
+          <div class="project-info">
+            <%= link_to project.title, project %>
+            <br>
+            <%= link_to 'Edit', edit_project_path(project) %>
+            <br>
+            <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

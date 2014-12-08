@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  project_id: 1
+  sender_id: 1
+  recipient_id: 1
+  token: MyString
+  invited_at: 2014-12-06 22:26:43
+  redeemed_at: 2014-12-06 22:26:43
+
+two:
+  email: MyString
+  project_id: 1
+  sender_id: 1
+  recipient_id: 1
+  token: MyString
+  invited_at: 2014-12-06 22:26:43
+  redeemed_at: 2014-12-06 22:26:43
