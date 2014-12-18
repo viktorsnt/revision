@@ -57,6 +57,8 @@ GEM
       activemodel
     erubis (2.7.0)
     execjs (2.2.2)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.5)
@@ -150,6 +152,7 @@ DEPENDENCIES
   clearance
   coffee-rails (~> 4.0.0)
   dotenv-rails
+  haml
   jbuilder (~> 2.0)
   jquery-rails
   pg
