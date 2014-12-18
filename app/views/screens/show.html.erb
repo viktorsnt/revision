@@ -4,4 +4,6 @@
 <br>
 <%= image_tag @screen.recent_photo.image.url, width: 500 %>
 <br>
+<%= render 'layouts/show_comments', model: @screen.recent_photo %>
+<br>
 <%= link_to 'Back', project_path(@screen.project_id) %>

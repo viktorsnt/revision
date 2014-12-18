@@ -1,0 +1,8 @@
+= simple_form_for :comment, url: add_comment_url do |f|
+  = f.input :title
+  = f.input :comment, as: :text
+
+  = f.submit 'Add Comment', class: 'btn btn-primary'
+
+  = f.hidden_field :commentable_type, value: model.class.to_s
+  = f.hidden_field :commentable_id, value: model.id

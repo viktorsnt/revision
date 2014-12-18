@@ -1,0 +1,9 @@
+.col-md-6
+	- if model.comments.any?
+		- model.comments.each do |comment|
+			%hr
+			%p= comment.user.email
+			%p= comment.title
+			%p= comment.comment
+	%hr
+	= render 'layouts/add_comment_form', model: @screen.recent_photo

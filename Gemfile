@@ -48,3 +48,4 @@ gem 'postmark-rails', '~> 0.9.0'
 gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'haml'
+gem "simple_form", 						"~> 3.0.1"

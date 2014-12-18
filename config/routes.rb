@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :screens
     end
     root to: 'projects#index', as: :signed_in_root
+    post '/add_comment', to: 'comments#add_comment', as: :add_comment
   end
 
   constraints Clearance::Constraints::SignedOut.new do

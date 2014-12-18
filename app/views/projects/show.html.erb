@@ -26,7 +26,7 @@
 		<%- @project.screens.each do |screen| %>
 			<div style="width:20%;display:block;">
 				<%= link_to image_tag(screen.photos.last.image.url, width: 300), project_screen_path(@project.id, screen.id) %>
-				<%= screen.title %>
+				<%= link_to screen.title, project_screen_path(@project.id, screen.id) %>
 			</div>
 		<% end %>
 	<% end %>
